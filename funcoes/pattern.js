@@ -25,8 +25,7 @@ $(document).ready(function()
         cpf == "99999999999" ||
         cpf == "" ||
         cpf.length != 11) valido = false;
-    else
-    {
+    else {
       var soma;
       var resto;
       soma = 0;
@@ -40,7 +39,14 @@ $(document).ready(function()
       if ((resto == 10) || (resto == 11))  resto = 0;
       if (resto != parseInt(cpf.substring(10, 11) ) ) valido = false;
     }
-    $(this).css("background-color", valido ? "#71FF71" : "#FF7171");
+    if (valido) {
+      $(this).addClass("is-valid");
+      $(this).removeClass("is-invalid");
+    }
+    else{
+      $(this).removeClass("is-valid");
+      $(this).addClass("is-invalid");
+    }
   });
 
   $("#cnpj").on("keyup", function()
@@ -85,7 +91,14 @@ $(document).ready(function()
       resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
       if (resultado != digitos.charAt(1)) valido = false;
     }
-    $(this).css("background-color", valido ? "#71FF71" : "#FF7171");
+    if (valido) {
+      $(this).addClass("is-valid");
+      $(this).removeClass("is-invalid");
+    }
+    else{
+      $(this).removeClass("is-valid");
+      $(this).addClass("is-invalid");
+    }
   });
 
   $("#cep").on("keyup", function()
@@ -132,9 +145,33 @@ $(document).ready(function()
 
   $("#mes").val(ano + "-" + (parseInt(mes) + 1));
   $("#semana").val(ano + "-W" + semana);
-  $("#datahora").val(ano + "-" + mes + "-" + dia + "T" + horas + ":" + minutos + ":" + segundos);
+  $("#datahora").val(ano + "-" + mes + "-" + dia + "T" + horas + ":" + minutos);
   $("#data").val(ano + "-" + mes + "-" + dia);
   $("#hora").val(horas + ":" + minutos);
+
+  $("#input").on("keyup", function(event){
+    $("#enviar").trigger("click");
+  });
+
+  // Função para chamar submit sem atualizar a página
+  $("#enviar").on("click", function(event){
+    event.preventDefault();
+    for (var i = 0; i < $('form input').length; i++) {
+      if (!$('input').get(i).checkValidity())
+      {
+        $($('input').get(i)).addClass("is-invalid");
+        $($('span').get(i)).addClass("is-invalid");
+        $('.is-invalid').focus();
+        $($('span').get(i)).html($('input')[i].validationMessage);
+        return;
+      }
+      else
+      {
+        $('input, span').removeClass("is-invalid");
+        $('input, span').html("");
+      }
+    }/**/
+  });
 
 });
 
