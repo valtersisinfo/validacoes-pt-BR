@@ -203,7 +203,7 @@ $(document).ready(function() {
   // Para configurar os dados com a data de hoje
   var data = new Date();
   var dia = data.getDate() < 10 ? "0" + data.getDate() : data.getDate();
-  var mes = data.getMonth() < 10 ? "0" + data.getMonth() : data.getMonth();
+  var mes = parseInt(data.getMonth()) + 1 < 10 ? "0" + (parseInt(data.getMonth()) + 1) : (parseInt(data.getMonth()) + 1);
   var ano = data.getFullYear();
 
   var primeiroDiaDoAno = new Date(data.getFullYear(),0,1);
@@ -214,7 +214,7 @@ $(document).ready(function() {
   var minutos = data.getMinutes() < 10 ? "0" + data.getMinutes() : data.getMinutes();
   var segundos = data.getSeconds() < 10 ? "0" + data.getSeconds() : data.getSeconds();
 
-  $("#iMes").val(ano + "-" + (parseInt(mes) + 1));
+  $("#iMes").val(ano + "-" + mes);
   $("#iSemana").val(ano + "-W" + semana);
   $("#iDataHora").val(ano + "-" + mes + "-" + dia + "T" + horas + ":" + minutos);
   $("#iData").val(ano + "-" + mes + "-" + dia);
@@ -230,6 +230,79 @@ $(document).ready(function() {
   $("#iCor").on("change", function()
   {
     $("#sCor").html($(this).val());
+  });
+
+
+  $("body").on("keyup", "input.numero", function(e) {
+    if (e.key == "-" ||
+      e.key == "+" ||
+      e.key == "." ||
+      e.key == "," ||
+      $.isNumeric(e.key) ||
+      e.key == " " ||
+      e.key == "Tab" ||
+      e.key == "CapsLock" ||
+      e.key == "Shift" ||
+      e.key == "Enter" ||
+      e.key == "Backspace" ||
+      e.key == "Delete" ||
+      e.key == "PageDown" ||
+      e.key == "PageUp" ||
+      e.key == "ArrowRight" ||
+      e.key == "ArrowLeft" ||
+      e.key == "ArrowUp" ||
+      e.key == "ArrowDown" ||
+      e.key == "End" ||
+      e.key == "Home" ||
+      e.key == "Control") {
+      if (e.key == " ") $(this).val($(this).val().replace(e.key, ""));
+
+      var VArray = [], VString = "";
+
+      if ($(this).attr("class").indexOf("inteiro") != "-1") {
+        $(this).val($(this).val().replace(".", ""));
+        $(this).val($(this).val().replace(",", ""));
+      } else {
+        $(this).val($(this).val().replace(",", "."));
+        // Verifica se existe mais de um .
+        if (e.key == "." || e.key == ",") {
+          VArray = $(this).val().split(".");
+          if (VArray.length > 2) {
+            for (var i = VArray.length - 1; i >= 1; i--)
+              VString = VArray[i] + VString;
+            VString = VArray[0] + "." + VString;
+            $(this).val(VString);
+          }
+        }
+      }
+
+      if ($(this).attr("negativo") == "false" && parseFloat($(this).val()) < 0)
+        $(this).val(parseFloat($(this).val()) * (-1));
+      else if (e.key == "-" || e.key == "+") {
+        $(this).val($(this).val().replace("+", ""));
+        VArray = $(this).val().split("-");
+
+        if ($(this).val().indexOf("-") != -1)
+        {
+          VString = "";
+          for (var j = VArray.length - 1; j >= 0; j--)
+            VString = VArray[j] + VString;
+          var VSinal = $(this).val().indexOf("-") == 0 ? "-" : "";
+          VString = VSinal + VString;
+          $(this).val(VString);
+        }
+      }
+    }
+    else
+    {
+      $(this).val($(this).val().replace(e.key, ""));
+    }
+  });
+
+  $("body").on("focusout", "input.numero", function()
+  {
+    if ($(this).attr("decimal") != undefined)
+      $(this).val((Math.floor($(this).val() * Math.pow(10, $(this).attr("decimal"))) / Math.pow(10, $(this).attr("decimal"))).toFixed($(this).attr("decimal")));
   });
 
   // Função para chamar submit sem atualizar a página se estiver tudo OKAY

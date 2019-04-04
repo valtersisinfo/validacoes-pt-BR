@@ -57,6 +57,7 @@
                   <input id="iIdade" class="form-control form-control-sm form-check-input mt-0" type="number" min="0" max="200" step="1" pattern="[0-9^,^.^-^+]+$" required title="Digite sua idade!">
                 </div>
               </div>
+
               <!-- Pattern/Required/Mask para CPF com JQuery Mask-->
               <div class="row mb-1">
                 <label id="lCpf" for="iCpf" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">CPF:</label>
@@ -297,6 +298,43 @@
                 <label id="lCor" for="iCor" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Cor: (<span id="sCor">#000000</span>)</label>
                 <div class="col-6 col-sm-6 col-md-7 col-lg-7 col-xl-8">
                   <input id="iCor" class="form-control form-control-sm form-check-input mt-0 px-1 py-0" type="color" title="Escolha uma cor!">
+                </div>
+              </div>
+
+              <!-- Pattern/Required para números inteiros -->
+              <div class="row mb-1">
+                <label id="lInteiro" for="iInteiro" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Inteiro:</label>
+                <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                  <input id="iInteiro" class="form-control form-control-sm form-check-input mt-0 numero inteiro" type="text" negativo="true" pattern="[0-9-]+" required title="Digite um número inteiro!">
+                </div>
+              </div>
+
+              <!-- Pattern/Required para números positivos -->
+              <div class="row mb-1">
+                <label id="lPositivo" for="iPositivo" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Positivo:</label>
+                <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                  <input id="iPositivo" class="form-control form-control-sm form-check-input mt-0 numero inteiro" type="text" negativo="false" pattern="[0-9]+$" min="0" required title="Digite um número positivo!">
+                </div>
+              </div>
+
+              <div class="row mb-1">
+                <label id="lDecimal2" for="iDecimal2" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Decimal (2):</label>
+                <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                  <input id="iDecimal2" class="form-control form-control-sm form-check-input mt-0 numero real" decimal="2" type="text" negativo="true" pattern="[0-9+--,.]+$" min="0" required title="Digite um decimal com duas casas!">
+                </div>
+              </div>
+
+              <div class="row mb-1">
+                <label id="lDecimal3" for="iDecimal3" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Decimal (3):</label>
+                <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                  <input id="iDecimal3" class="form-control form-control-sm form-check-input mt-0 numero real" decimal="3" type="text" negativo="true" pattern="[0-9+--,.]+$" min="0" required title="Digite um decimal com três casas!">
+                </div>
+              </div>
+
+              <div class="row mb-1">
+                <label id="lDecimalN" for="iDecimalN" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Decimal (&infin;):</label>
+                <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                  <input id="iDecimalN" class="form-control form-control-sm form-check-input mt-0 numero real" type="text" negativo="true" pattern="[0-9+--,.]+$" min="0" required title="Digite um número que contenha decimais!">
                 </div>
               </div>
 

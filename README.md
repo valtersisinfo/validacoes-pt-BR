@@ -37,5 +37,11 @@
 * Hora
 * Classificar
 * Cor
+* Inteiro
+*	Positivo
+*	Decimal(2)
+*	Decimal(3)
+* Decimal(∞)
+
 
 
