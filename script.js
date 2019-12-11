@@ -276,20 +276,30 @@ $(document).ready(function() {
         }
       }
 
-      if ($(this).attr("negativo") == "false" && parseFloat($(this).val()) < 0)
-        $(this).val(parseFloat($(this).val()) * (-1));
-      else if (e.key == "-" || e.key == "+") {
-        $(this).val($(this).val().replace("+", ""));
-        VArray = $(this).val().split("-");
+      if ($(this).attr("min") != undefined)
+        if (parseFloat($(this).val()) < parseFloat($(this).attr("min")))
+          $(this).val($(this).attr("min"));
 
-        if ($(this).val().indexOf("-") != -1)
-        {
-          VString = "";
-          for (var j = VArray.length - 1; j >= 0; j--)
-            VString = VArray[j] + VString;
-          var VSinal = $(this).val().indexOf("-") == 0 ? "-" : "";
-          VString = VSinal + VString;
-          $(this).val(VString);
+      if ($(this).attr("max") != undefined)
+        if (parseFloat($(this).val()) > parseFloat($(this).attr("max")))
+          $(this).val($(this).attr("max"));
+
+      if ($(this).attr("negativo") != undefined) {
+        if ($(this).attr("negativo") == "false" && parseFloat($(this).val()) < 0)
+          $(this).val(parseFloat($(this).val()) * (-1));
+        else if (e.key == "-" || e.key == "+") {
+          $(this).val($(this).val().replace("+", ""));
+          VArray = $(this).val().split("-");
+
+          if ($(this).val().indexOf("-") != -1)
+          {
+            VString = "";
+            for (var j = VArray.length - 1; j >= 0; j--)
+              VString = VArray[j] + VString;
+            var VSinal = $(this).val().indexOf("-") == 0 ? "-" : "";
+            VString = VSinal + VString;
+            $(this).val(VString);
+          }
         }
       }
     }

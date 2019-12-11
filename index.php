@@ -100,6 +100,7 @@
                   <input id="iCelular" class="form-control form-control-sm form-check-input mt-0" type="tel" pattern="\(\d{2}\) \d{5}-\d{4}$" required title="Digite o celular no formato (NN)NNNNNN-NNNN!">
                 </div>
               </div>
+
               <!-- Pattern/Required/Mask para telefone com 9 ou 8 dígitos -->
               <div class="row mb-1">
                 <label id="lTelefoneX" for="iTelefoneX" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Telefone ou Celular:</label>
@@ -107,6 +108,7 @@
                   <input id="iTelefoneX" class="form-control form-control-sm form-check-input mt-0" type="tel" pattern="\(\d{2}\) \d{4,5}-\d{4,5}$" required title="Digite o celular no formato (nn)nnnnn-nnnn ou (nn)nnnn-nnnn!">
                 </div>
               </div>
+
               <!-- Pattern/Required para CEP -->
               <div class="row mb-1">
                 <label id="lCep" for="iCep" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Cep:</label>
@@ -114,6 +116,7 @@
                   <input id="iCep" class="form-control form-control-sm form-check-input mt-0" type="text" pattern="\d{5}-\d{3}" required title="Digite o número do CEP no formato NNNNN-NNN!">
                 </div>
               </div>
+
               <!-- Pattern/Required para país -->
               <div class="row mb-1">
                 <label id="lPais" for="iPais" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">País:</label>
@@ -121,6 +124,7 @@
                   <input id="iPais" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-zÀ-ú \s]+$" required title="Digite o nome do País!">
                 </div>
               </div>
+
               <!-- Required para estado -->
               <div class="row mb-1">
                 <label id="lEstado" for="sEstado" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Escolher Estado:</label>
@@ -157,6 +161,7 @@
                   </select>
                 </div>
               </div>
+
               <!-- Pattern/Required/Mask para estado -->
               <div class="row mb-1">
                 <label id="lEstado" for="iEstado" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Digitar Estado:</label>
@@ -164,6 +169,7 @@
                   <input id="iEstado" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-Z]{2}" required title="Digite as siglas do estado no formato LL!">
                 </div>
               </div>
+
               <!-- Pattern/Required para cidade -->
               <div class="row mb-1">
                 <label id="lCidade" for="iCidade" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Cidade:</label>
@@ -171,6 +177,7 @@
                   <input id="iCidade" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-zÀ-ú \p{P} \s]+$" required title="Digite o nome da cidade!">
                 </div>
               </div>
+
               <!-- Pattern/Required para bairro -->
               <div class="row mb-1">
                 <label id="lBairro" for="iBairro" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Bairro:</label>
@@ -178,6 +185,7 @@
                   <input id="iBairro" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-zÀ-ú0-9 \p{P} \s]+$" required title="Digite o nome do bairro!">
                 </div>
               </div>
+
               <!-- Pattern para complemento -->
               <div class="row mb-1">
                 <label id="lComplemento" for="iComplemento" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Complemento:</label>
@@ -185,6 +193,7 @@
                   <input id="iComplemento" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-zÀ-ú0-9 \p{P} \s]+$" title="Digite o complemento!">
                 </div>
               </div>
+
               <!-- Pattern para unidade -->
               <div class="row mb-1">
                 <label id="lUnidade" for="iUnidade" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Unidade:</label>
@@ -192,6 +201,7 @@
                   <input id="iUnidade" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-zÀ-ú0-9 \p{P} \s]+$" title="Digite a unidade!">
                 </div>
               </div>
+
               <!-- Pattern/Required para logradouro -->
               <div class="row mb-1">
                 <label id="lLogradouro" for="iLogradouro" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Logradouro:</label>
@@ -199,6 +209,7 @@
                   <input id="iLogradouro" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[A-zÀ-ú0-9 \p{P} \s]+$" required title="Digite o logradouro!">
                 </div>
               </div>
+
               <!-- Pattern para unidade -->
               <div class="row mb-1">
                 <label id="lNumero" for="iNumero" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Número:</label>
@@ -206,6 +217,7 @@
                   <input id="iNumero" class="form-control form-control-sm form-check-input mt-0" type="text" pattern="[0-9^,^.^-^+]+$" title="Digite o número!">
                 </div>
               </div>
+
               <!-- Pattern para GIA -->
               <div class="row mb-1">
                 <label id="lGia" for="iGia" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">GIA:</label>
@@ -213,6 +225,7 @@
                   <input id="iGia" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[0-9^,^.^-^+]+$" title="Digite o GIA!">
                 </div>
               </div>
+
               <!-- Pattern para IBGE -->
               <div class="row mb-1">
                 <label id="lIbge" for="iIbge" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">IBGE:</label>
@@ -220,6 +233,7 @@
                   <input id="iIbge" class="form-control form-control-sm form-check-input viacep mt-0" type="text" pattern="[0-9^,^.^-^+]+$" title="Digite o código do IBGE!">
                 </div>
               </div>
+
               <!-- Pattern/Required para URL -->
               <div class="row mb-1">
                 <label id="lUrl" for="iUrl" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">URL:</label>
@@ -236,6 +250,7 @@
                   ?>" required title="Digite uma URL válida!">
                 </div>
               </div>
+
               <!-- Required para Busca -->
               <div class="row mb-1">
                 <label id="lBusca" for="iBusca" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Busca:</label>
@@ -243,7 +258,8 @@
                   <input id="iBusca" name="q" class="form-control form-control-sm form-check-input mt-0" type="search" required title="Digite o que deseja procurar!">
                 </div>
               </div>
-               <!-- Inputs que não precisam de pattern -->
+
+              <!-- Inputs que não precisam de pattern -->
               <!-- Required para Mês -->
               <div class="row mb-1">
                 <label id="lMes" for="iMes" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Mês:</label>
@@ -289,13 +305,13 @@
               <div class="row mb-1">
                 <label id="lClassificar" for="iClassificar" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Classificar (<span id="sClassificar">9</span>):</label>
                 <div class="col-6 col-sm-6 col-md-7 col-lg-7 col-xl-8">
-                  <input id="iClassificar" class="form-control form-control-sm form-check-input form-control-range mt-0" type="range" min="0" max="10" value="9" title="Escolha uma nota!">
+                  <input id="iClassificar" class="form-control form-control-sm form-check-input form-control-range custom-range mt-0" type="range" min="0" max="10" value="9" title="Escolha uma nota!">
                 </div>
               </div>
 
               <!-- input[type="color"] -->
               <div class="row mb-1">
-                <label id="lCor" for="iCor" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Cor: (<span id="sCor">#000000</span>)</label>
+                <label id="lCor" for="iCor" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Cor (<span id="sCor">#000000</span>):</label>
                 <div class="col-6 col-sm-6 col-md-7 col-lg-7 col-xl-8">
                   <input id="iCor" class="form-control form-control-sm form-check-input mt-0 px-1 py-0" type="color" title="Escolha uma cor!">
                 </div>
@@ -305,7 +321,7 @@
               <div class="row mb-1">
                 <label id="lInteiro" for="iInteiro" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Inteiro:</label>
                 <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                  <input id="iInteiro" class="form-control form-control-sm form-check-input mt-0 numero inteiro" type="text" negativo="true" pattern="[0-9-]+" required title="Digite um número inteiro!">
+                  <input id="iInteiro" class="form-control form-control-sm form-check-input mt-0 numero inteiro" type="text" negativo="true" pattern="[-+]{0,}\d{0,}" required title="Digite um número inteiro!">
                 </div>
               </div>
 
@@ -313,28 +329,35 @@
               <div class="row mb-1">
                 <label id="lPositivo" for="iPositivo" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Positivo:</label>
                 <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                  <input id="iPositivo" class="form-control form-control-sm form-check-input mt-0 numero inteiro" type="text" negativo="false" pattern="[0-9]+$" min="0" required title="Digite um número positivo!">
+                  <input id="iPositivo" class="form-control form-control-sm form-check-input mt-0 numero inteiro" type="text" negativo="false" pattern="\d{1,}" min="0" required title="Digite um número positivo!">
                 </div>
               </div>
 
               <div class="row mb-1">
                 <label id="lDecimal2" for="iDecimal2" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Decimal (2):</label>
                 <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                  <input id="iDecimal2" class="form-control form-control-sm form-check-input mt-0 numero real" decimal="2" type="text" negativo="true" pattern="[0-9+--,.]+$" min="0" required title="Digite um decimal com duas casas!">
+                  <input id="iDecimal2" class="form-control form-control-sm form-check-input mt-0 numero real" decimal="2" type="text" negativo="true" pattern="[+-]{0,}\d{1,}[,.]{1}\d{2}" required title="Digite um decimal com duas casas!">
                 </div>
               </div>
 
               <div class="row mb-1">
                 <label id="lDecimal3" for="iDecimal3" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Decimal (3):</label>
                 <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                  <input id="iDecimal3" class="form-control form-control-sm form-check-input mt-0 numero real" decimal="3" type="text" negativo="true" pattern="[0-9+--,.]+$" min="0" required title="Digite um decimal com três casas!">
+                  <input id="iDecimal3" class="form-control form-control-sm form-check-input mt-0 numero real" decimal="3" type="text" negativo="true" pattern="[+-]{0,}\d{1,}[,.]{1}\d{3}" required title="Digite um decimal com três casas!">
                 </div>
               </div>
 
               <div class="row mb-1">
                 <label id="lDecimalN" for="iDecimalN" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Decimal (&infin;):</label>
                 <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                  <input id="iDecimalN" class="form-control form-control-sm form-check-input mt-0 numero real" type="text" negativo="true" pattern="[0-9+--,.]+$" min="0" required title="Digite um número que contenha decimais!">
+                  <input id="iDecimalN" class="form-control form-control-sm form-check-input mt-0 numero real" type="text" negativo="true" pattern="[-+]*\d+[,.]{0,1}\d*" required title="Digite um número que contenha decimais!">
+                </div>
+              </div>
+
+              <div class="row mb-1">
+                <label id="lMinMax" for="iMinMax" class="col-form-label col-form-label-sm col-6 col-sm-6 col-md-5 col-lg-5 col-xl-4">Min(3) Max(10):</label>
+                <div class="col-6 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                  <input id="iMinMax" class="form-control form-control-sm form-check-input mt-0 numero real" type="text" negativo="true" pattern="[-+]*\d+[,.]{0,1}\d*" min="3" max="10" required title="Digite um número que contenha decimais!">
                 </div>
               </div>
 
